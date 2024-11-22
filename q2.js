@@ -1,38 +1,47 @@
 module.exports = timeToTravel; // DO NOT REMOVE
 
 /**
- * John is doing a road trip from Singapore all the way to Thailand, driving through Malaysia.
+ * John is doing a road trip from Singapore to Thailand, driving through Malaysia.
  *
- * Along the way, John will need to refuel his car. He has done his homework and found the gas stations
+ * Along the way, he needs to refuel his car at various gas stations.
  *
- * Each full refuel can last him 100km.
+ * Each full refuel lasts for 100km, and refueling takes an additional 1 hour.
  *
- * If he choose to stop and refuel, he would always pump a full tank and refill
+ * John drives at a speed of 10km per hour.
  *
- * And regardless of current capacity, refuel always take an additional 1 hour to do so.
+ * The goal is to determine the minimum time John will take to complete his journey.
  *
- * If John travels 10km per hour, what is the minimum amount of time John need to make the journey?
+ * If no solution exists (e.g., distances between stations are too far), return -1.
  *
- * If there is no solution, return -1.
+ * @param {number[]} distanceToPumps - An array representing the distances (in km) between consecutive pump stations.
+ *                                    The last value represents the distance from the last pump station to the destination.
+ * @returns {number} - The minimum number of hours John will take to complete the journey, or -1 if no solution exists.
  *
- * @param distanceToPumps: int[],
- *              distance in km between 2 pump station.
- *              The last value in the array is the distance from the last pump station to the destination.
- * @returns a single number representing the number of hours taken.
+ * @example
+ * // Example 1
+ * // Input: [90, 90, 90]
+ * // Output: 29
+ * // Explanation:
+ * // - Traveling at 10km per hour, John takes 9 hours to reach the first station (90km).
+ * // - He refuels, which takes 1 hour.
+ * // - He continues, takes 9 more hours, refuels again, and repeats until the destination.
+ * // Total time: 9 (drive) + 1 (refuel) + 9 (drive) + 1 (refuel) + 9 (drive) = 29 hours.
  *
- * Example: [90, 90, 90] - John would take 9 + 1 + 9 + 1 + 9 = 29 hours
- * Explanation:
- *      - Traveling at 10km per hour, John would take 9 hours to reach the first station.
- *      - As he only has 10km of fuel left, he has to refuel, taking him 1 hour to do so.
- *      - He would continue his travels, taking another 9 hours.
- *      - Refuel once again, taking him 1 hour to do so.
- *      - And make the final 9 hour to reach the destination.
+ * @example
+ * // Example 2
+ * // Input: [20, 40, 40, 10]
+ * // Output: 10
+ * // Explanation:
+ * // - John drives the first 10 hours to cover the full 100km to the first station.
+ * // - He refuels (1 hour).
+ * // - Then he drives the next 10km (1 hour) to the final destination.
  *
- * Example: [20, 40, 40, 10] - John would take 10 + 1 + 1 hours
- *      - John will drive the first 10 hours to cover the full 100km to reach the final station
- *      - He would take 1 hour to refuel the tank
- *      - He then take another hour to complete the final 10km.
- *
+ *  * @example
+ * // Example 3
+ * // Input: [10, 120, 80]
+ * // Output: -1
+ * // Explanation:
+ * // - After the first station, John would not be able to reach station 2 as he only has 100km worth of fuel but the station is 120km away.
  */
 
 function timeToTravel(distanceToPumps) {}

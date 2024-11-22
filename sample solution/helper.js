@@ -1,13 +1,27 @@
 const arr = [];
-const x = 18;
-for (let i = 0; i < x; i++) {
-    arr[i] = i + 1;
-}
-const result = new Array(x).fill(null);
+const seen = new Set();
+
 let i = 0;
-while (i < arr.length) {
-    const roll = Math.floor(Math.random() * x);
-    if (result[roll]) continue;
-    result[roll] = i++ + 1;
+while (i < 52) {
+    const roll = Math.floor(Math.random() * 52);
+    if (seen.has(roll)) continue;
+
+    seen.add(roll);
+    arr.push(roll + 1);
+    i++;
 }
-console.log(JSON.stringify(result));
+
+seen.clear();
+i = 0;
+const select = [];
+while (i < 25) {
+    const roll = Math.floor(Math.random() * 52);
+    if (seen.has(roll)) continue;
+
+    seen.add(roll);
+    select.push(roll);
+    i++;
+}
+
+console.log(JSON.stringify(arr));
+console.log(JSON.stringify(select));

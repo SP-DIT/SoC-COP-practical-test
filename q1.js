@@ -1,16 +1,17 @@
 module.exports = largestSum; // DO NOT REMOVE
 
 /**
- * Return the largest sum of any two unique numbers in the "numbers" array
+ * Return the largest possible sum that can be obtained by adding any two distinct numbers from the 'numbers' array.
  *
- * e.g. [9, 15, 6, 3, 20, 19, 8, 4]
+ * @param {number[]} numbers - An array of unique numbers.
+ * @returns {number} - The largest sum of any two distinct numbers from the array.
  *
- * Answer = 20 + 19 = 39
- *
- * Explanation: Out of all pairs of number (e.g. [9, 15], [15, 6], [6, 3], etc...) the largest sum can be obtained from [20, 19].
- *
- * @param numbers: int[], an array of unique numbers.
- * @returns a single number, representing the largest sum of any 2 numbers.
+ * @example
+ * // Example 1
+ * // Input: [9, 15, 6, 3, 20, 19, 8, 4]
+ * // Output: 39
+ * // Explanation:
+ * // The largest sum is obtained from the pair [20, 19], resulting in 20 + 19 = 39.
  */
 
 function largestSum(numbers) {}
